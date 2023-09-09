@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="You're a killer agent who finds her target by only a picture, You receive the picture you kill the target, Each level the street will get more crowed and new people will be added! Enjoy endless levels...">
+    <meta name="keywords" content="game, p5js, html5, gamejam, ggj, 2021, browser game, browser, instant, .io, endless, crossplatform">
+    <meta name="author" content="Cena Abachi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give a photo receive the corpse</title>
+    <style>
+      .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+      
+      .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #4CAF50;
+      }
+      
+      .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      .disable-select {
+        -webkit-user-select: none;  
+        -moz-user-select: none;    
+        -ms-user-select: none;      
+        user-select: none;
+      }
+
+      #p5_loading {
+          background-color: cornflowerblue;
+          width: 100vw;
+          height: 100vh;
+          color: white;
+          text-align: center;
+          position: fixed;
+          z-index: 200;
+          font-size: 10vh;
+          padding-top: 20vh;
+      }
+ 
+      
+      </style>
+  </head>
+
+  <body oncontextmenu="return false" class="disable-select" style="margin: 0; padding: 0; overflow: hidden; font-family: 'Brush Script MT', cursive;">
+
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script> -->
+    
+    <div id="p5_loading" class="loadingclass">Downloading files(5mb)...</div>
+
+    <div id="hudDiv" style="position: absolute; bottom: 0; width: 100%; height: 50px; border: 1px solid black; font-size: 3.5vh; text-align: center; color: white;">
+      <div id="livesDiv" style="position: absolute; width: 34%; height: 100%; margin-left: 0; background-color:rgb(71, 74, 255);">Lives: 3</div>
+      <div id="bulletsDiv" style="position: absolute; width: 33%; height: 100%; margin-left: 34%; background-color: rgb(107, 110, 253);">Bullets: 3</div>
+      <div id="levelDiv" style="position: absolute; width: 33%; height: 100%; margin-left: 67%; background-color: rgb(71, 74, 255);">Level: 1</div>
+    </div>
+
+    <div id="startDiv" style="position: absolute; width: 100vw; height: 100vh; font-size: 10vh; display: none; background: violet ;background-image: url('./img/background/1.jpg'); background-size:100% 100%;">
+      <button onclick="startGame()" style="position: absolute; width: 100%; height: 100%; background: transparent; font-size: 7vh; color: white; font-weight: bolder; text-align: center; padding-right: 30%; padding-top: 5vh; font-family:Impact, Haettenschweiler, 'Brush Script MT'; font-weight: bold;">Click to play...</br>F11 to fullscreen</button>
+    </div>
+
+    <div id="statusDiv"  style="width: 70vw; height: 60vh; display: none; position: absolute; background-color: aqua; margin-left: 15vw; margin-top: 20vh; text-align: center; font-size: 7vh; border-radius: 10%; padding-top: 5vh; border-width: 2vh; border-color: cornflowerblue; border-style: groove; background-color: rgba(46, 76, 133, 0.678); color: white;"></div>
+
+    <button id="gameOverDiv" onclick="window.location.reload();" style="position: fixed; z-index: 100; width: 100vw; height: 100vh; background: transparent; display: none"></button>
+    <script type="text/javascript" src="libraries/p5.js"></script>
+    <script type="text/javascript" src="libraries/p5.sound.min.js"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+  </body>
+</html>
