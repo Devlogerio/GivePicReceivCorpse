@@ -1,3 +1,5 @@
+Play now: https://givepicreceivcorpse-678f2172631b.herokuapp.com/
+
 # GivePicReceivCorpse
 Find the target in the crowd, kill them, and level up, Each level it gets more crowded
 
